@@ -30,18 +30,26 @@ export const ListWrapper = styled.ul`
   padding-left: 0px;
 `;
 
-export const ListItem = styled.li`
-  display: flex;
-  align-items: center;
+export const List = styled.li<{
+  isExpanded?: boolean;
+  id?: string;
+}>`
   color: ${Themes.color.white};
-  padding: 17px 22px 17px 30px;
   line-height: 1;
   transition: 0.2s ease background;
   cursor: pointer;
-  font-size: 15px;
+  background: ${({ isExpanded }) => isExpanded && Themes.color.blue5};
   &:first-child {
     margin-bottom: 30px;
   }
+`;
+
+export const ListContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 17px 22px 17px 20px;
+  font-size: 15px;
   &:hover {
     background: ${Themes.color.blue2};
   }
@@ -53,9 +61,33 @@ export const IconHolder = styled.div`
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)``;
 
-export const FontAwesomeArrowIcon = styled(FontAwesomeIcon)`
+export const Indicators = styled.div`
   margin-left: auto;
-  &.svg-inline--fa.fa-w-14 {
-    width: 8px;
+  display: flex;
+  align-items: center;
+`;
+
+export const FontAwesomeArrowIcon = styled(FontAwesomeIcon)`
+  margin-left: 4px;
+  &.svg-inline--fa {
+    width: 5px;
+  }
+`;
+
+export const Badge = styled.span<{ color: "primary" | "secondary" }>`
+  background: ${({ color }) =>
+    color === "primary" ? Themes.color.blue2 : Themes.color.peach1};
+  font-size: 10px;
+  border-radius: 20px;
+  padding: 2px 8px;
+`;
+
+export const SubMenu = styled(ListWrapper)`
+  ${List} {
+    margin-bottom: 0px;
+    ${ListContentWrapper} {
+      padding-left: 50px;
+      font-size: 14px;
+    }
   }
 `;

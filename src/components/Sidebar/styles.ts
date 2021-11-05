@@ -6,6 +6,7 @@ export const Root = styled.div`
   background: ${Themes.color.blue4};
   width: ${Themes.measurements.sidebarWidth};
   height: 100vh;
+  min-width: ${Themes.measurements.sidebarWidth};
 `;
 
 export const LogoWrapper = styled.div`
@@ -72,14 +73,6 @@ export const FontAwesomeArrowIcon = styled(FontAwesomeIcon)`
   &.svg-inline--fa {
     width: 5px;
   }
-`;
-
-export const Badge = styled.span<{ color: "primary" | "secondary" }>`
-  background: ${({ color }) =>
-    color === "primary" ? Themes.color.blue2 : Themes.color.peach1};
-  font-size: 10px;
-  border-radius: 20px;
-  padding: 2px 8px;
 `;
 
 export const SubMenu = styled(ListWrapper)`

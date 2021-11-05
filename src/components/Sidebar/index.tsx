@@ -10,7 +10,6 @@ import {
   SubMenu,
   ListContentWrapper,
   Indicators,
-  Badge,
 } from "./styles";
 import LogoImage from "../../img/logo.png";
 import {
@@ -22,6 +21,7 @@ import { ListItemProps } from "./types";
 import { listItems } from "./data";
 import { Collapse } from "react-collapse";
 import { useState } from "react";
+import { Badge } from "../Shared/Badge";
 
 const ListItem = (props: ListItemProps) => {
   const { id, title, icon, badge, isExpanded, onClick, subMenu } = props;

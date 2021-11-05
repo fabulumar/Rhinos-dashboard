@@ -1,6 +1,6 @@
+import React from "react";
 import styled from "styled-components";
-import Header from "../components/Header";
-import ContentWrapper from "../components/Main/intex";
+import ContentWrapper from "../components/ContentWrapper/intex";
 import Sidebar from "../components/Sidebar";
 
 const BodyWrapper = styled.div`
@@ -12,15 +12,13 @@ const BodyWrapper = styled.div`
   }
 `;
 
-const Home = () => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <BodyWrapper>
       <Sidebar></Sidebar>
-      <ContentWrapper>
-        <Header></Header>
-      </ContentWrapper>
+      <ContentWrapper>{children}</ContentWrapper>
     </BodyWrapper>
   );
 };
 
-export default Home;
+export default Layout;
